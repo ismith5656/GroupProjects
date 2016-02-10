@@ -130,6 +130,7 @@ public class Map {
     */
     private class Node {
         char val; //Value of this node
+        boolean bomb;
         /* Neighboring nodes */
         Node down, downright, right, upright;
         
@@ -242,6 +243,7 @@ public class Map {
         public String toString() {
             return this.val + " ";
         }
+        
     }
     
 }
