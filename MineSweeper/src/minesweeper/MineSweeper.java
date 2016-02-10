@@ -17,12 +17,13 @@ public class MineSweeper {
 
     public static void main(String[] args) {
         // TODO code application logic here
-          
-        System.out.println(board.toString(10,10));
+        Menu();  
+        
     }
 
-    public void Menu() {
+    public static void Menu() {
         boolean run = true;
+        
         System.out.println("       Mine Sweeper      ");
         System.out.println("=========================");
         do {
@@ -54,12 +55,63 @@ public class MineSweeper {
                     playGame();
                     break;
                 case 2:
+                    playInstructions();
+                    break;
+                case 3:
+                    System.out.println("Goodbye!");
+                    run = false; //End game
                     break;
             }
         }while(run == true);
     }
 
-    public void playGame() {
+    public static void playGame() {
 
     }
+
+    public static void playInstructions() {
+        tenSpace();
+        System.out.println("               Rules              ");
+        System.out.println("=====================================");
+        System.out.println("");
+        System.out.print("The rules in Minesweeper are simple:\n" +
+"\n" +
+"Uncover a mine, and the game ends.\n" +
+"\n" +
+"Uncover an empty square, and you keep playing.\n" +
+"\n" +
+"Uncover a number, and it tells you how many mines lay hidden\n"
++ "in the eight surrounding squares—information you use\n"
+                + "to deduce which nearby squares are safe to click.");
+        System.out.print("\n\n" + "1. return to menu.\n\n" + ">");
+        /* Collect input */
+            input = -1;
+            do {
+                try {
+                    input = scan.nextInt();
+                } catch (InputMismatchException e) {
+                }
+
+                /* Invalid input */
+                if (!(input > 0 && input <= 1)) {
+                    input = -1;
+                    System.out.print("1.Go back to menu.\n\n"
+                            + "> ");
+                }
+            } while (input == -1);
+
+            /* Check input number */
+            switch (input) {
+                case 1:
+                    Menu();
+                    break;
+                
+            }
+        
+    }
+    public static void tenSpace(){
+            for(int i = 0;i <10; i++){
+                System.out.println("");
+            }
+        }
 }
