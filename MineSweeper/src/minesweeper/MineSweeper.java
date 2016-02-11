@@ -8,22 +8,21 @@ package minesweeper;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-
 public class MineSweeper {
 
     static Scanner scan = new Scanner(System.in); //Input system
     static int input; //Input variable
-    static Map board = new Map(10,10); //Game board
+    static Map board = new Map(10, 10); //Game board
 
     public static void main(String[] args) {
         // TODO code application logic here
-        Menu();  
-        
+        Menu();
+
     }
 
     public static void Menu() {
         boolean run = true;
-        
+
         System.out.println("       Mine Sweeper      ");
         System.out.println("=========================");
         do {
@@ -52,39 +51,39 @@ public class MineSweeper {
             /* Check input number */
             switch (input) {
                 case 1:
+                    Space(20);
                     playGame();
                     break;
                 case 2:
+                    Space(20);
                     playInstructions();
                     break;
                 case 3:
+                    Space(20);
                     System.out.println("Goodbye!");
                     run = false; //End game
                     break;
             }
-        }while(run == true);
+        } while (run == true);
     }
 
     public static void playGame() {
 
     }
+public static void customGame(){
+    
+}
+public static void setGame(){
+    boolean run = true;
+    do {
+            System.out.print("Please select a Diffculty:\n"
+                    + "1. Easy (10 bombs)\n"
+                    + "2. Medium (20 bombs)\n"
+                    + "3. Hard (30 bombs)\n"
+                    + "4. Back\n\n"
+                    + "> ");
 
-    public static void playInstructions() {
-        tenSpace();
-        System.out.println("               Rules              ");
-        System.out.println("=====================================");
-        System.out.println("");
-        System.out.print("The rules in Minesweeper are simple:\n" +
-"\n" +
-"Uncover a mine, and the game ends.\n" +
-"\n" +
-"Uncover an empty square, and you keep playing.\n" +
-"\n" +
-"Uncover a number, and it tells you how many mines lay hidden\n"
-+ "in the eight surrounding squares—information you use\n"
-                + "to deduce which nearby squares are safe to click.");
-        System.out.print("\n\n" + "1. return to menu.\n\n" + ">");
-        /* Collect input */
+            /* Collect input */
             input = -1;
             do {
                 try {
@@ -93,9 +92,9 @@ public class MineSweeper {
                 }
 
                 /* Invalid input */
-                if (!(input > 0 && input <= 1)) {
+                if (!(input > 0 && input <= 4)) {
                     input = -1;
-                    System.out.print("1.Go back to menu.\n\n"
+                    System.out.print("Please input a number 1-4.\n\n"
                             + "> ");
                 }
             } while (input == -1);
@@ -103,15 +102,80 @@ public class MineSweeper {
             /* Check input number */
             switch (input) {
                 case 1:
-                    Menu();
+                    Space(20);
+                   playEasy(10);
                     break;
-                
+                case 2:
+                    Space(20);
+                    playMedium(20);
+                    break;
+                case 3:
+                    Space(20);
+                    playHard(30);
+                    break;
+                case 4:
+                    playGame();
+                    break;
             }
-        
-    }
-    public static void tenSpace(){
-            for(int i = 0;i <10; i++){
-                System.out.println("");
+        } while (run == true);
+}
+    public static void playInstructions() {
+       
+        System.out.println("               Rules              ");
+        System.out.println("=====================================");
+        System.out.println("");
+        System.out.print("The rules in Minesweeper are simple:\n"
+                + "\n"
+                + "Uncover a mine, and the game ends.\n"
+                + "\n"
+                + "Uncover an empty square, and you keep playing.\n"
+                + "\n"
+                + "Uncover a number, and it tells you how many mines lay hidden\n"
+                + "in the eight surrounding squares—information you use\n"
+                + "to deduce which nearby squares are safe to click.");
+        System.out.print("\n\n" + "1. return to menu.\n\n" + ">");
+        /* Collect input */
+        input = -1;
+        do {
+            try {
+                input = scan.nextInt();
+            } catch (InputMismatchException e) {
             }
+
+            /* Invalid input */
+            if (!(input > 0 && input <= 1)) {
+                input = -1;
+                System.out.print("1.Go back to menu.\n\n"
+                        + "> ");
+            }
+        } while (input == -1);
+
+        /* Check input number */
+        switch (input) {
+            case 1:
+                Space(20);
+                Menu();
+                break;
+
         }
+
+    }
+
+    public static void Space(int x) {
+        for (int i = 0; i < x; i++) {
+            System.out.println("");
+        }
+    }
+
+    private static void playEasy(int numB) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static void playMedium(int numB) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static void playHard(int numB) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
