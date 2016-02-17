@@ -8,6 +8,8 @@
  */
 package minesweeper;
 
+import java.util.Random;
+
 public class Map {
     
     Node topleft = null; //Starting position
@@ -243,6 +245,21 @@ public class Map {
         public String toString() {
             return this.val + " ";
         }
+        
+        public boolean makeBombs(int numOfBomb){
+             Node cur = this;//start here
+             Random R = new Random();
+             boolean b = true;
+             for(int i= 0; i < numOfBomb; i++ ){
+                 for(int x = 0; x < R.nextInt(100);  x++ ){
+                     if(b == R.nextBoolean()){
+                         
+                     }
+                 }
+             }
+             return true;
+        }
+        
         
     }
     
