@@ -16,20 +16,23 @@ import java.util.Random;
     private final boolean even;
     private int[][] bitArr;
     
-    public BitErrorArr(int ROW, int COL){
-        this.ROW = ROW;  
-        this.COL = COL;  
-        this.even = this.r.nextBoolean() ;
+    public BitErrorArr(){
+        this.ROW = 8;  
+        this.COL = 8;  
+        this.even = r.nextBoolean() ;
         makeArray(this.bitArr, this.ROW, this.COL, this.even);
     }
     
 private int[][] makeArray(int arr[][], int ROW, int COL, boolean even){
      arr = new int[ROW][COL];
-        int num = 0;
+       
         for (int i = 0; i < ROW;i++){
             for( int j = 0; j < COL;j++){
-                num++;
-                arr[i][j] = num;
+                if (i <= 7 && i <= 7){
+                    arr[i][j] = r.nextInt(1);
+                }
+                
+                 
             }
         }
   return arr;
@@ -53,5 +56,6 @@ public void printArr(){
         
             }
     }
+    
 }
 }

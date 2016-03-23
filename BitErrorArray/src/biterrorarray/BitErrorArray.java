@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package biterrorarray;
+
+import java.util.Random;
+
 /**
  *
  * @author ismith5656
@@ -15,7 +18,9 @@ public class BitErrorArray {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        BitErrorArr() arr = new BitErrorArr(8,8);
+        BitErrorArr arr = new BitErrorArr();
+        System.out.println(arr);
+        
     }
     
 }
