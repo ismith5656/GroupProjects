@@ -19,8 +19,30 @@ public class BitErrorArray {
     public static void main(String[] args) {
         // TODO code application logic here
         BitErrorArr arr = new BitErrorArr();
-        System.out.println(arr);
+        int[][] Arr = arr.createArr();
+        
+        System.out.println("  1 2 3 4 5 6 7 8");
+        System.out.println(" _________________");
+        for (int i = 0; i < 8;i++){
+            for( int j = 0; j < 8;j++){
+                if(j == 0){
+                    System.out.print( i +"|");
+                }
+                if(j < 7){
+                    System.out.print(Arr[i][j] + " ");
+                }else{
+                    System.out.print(Arr[i][j]);
+                }
+                
+                if( j == 7 ){
+                    System.out.print("");
+                    System.out.println("");
+                }
+            }
+        }
         
     }
+    
+
     
 }

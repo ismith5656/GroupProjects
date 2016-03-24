@@ -20,12 +20,13 @@ import java.util.Random;
         this.ROW = 8;  
         this.COL = 8;  
         this.even = r.nextBoolean() ;
-        makeArray(this.bitArr, this.ROW, this.COL, this.even);
+        
     }
     
 private int[][] makeArray(int arr[][], int ROW, int COL, boolean even){
      arr = new int[ROW][COL];
-       
+     even = r.nextBoolean() ;
+       if(even){
         for (int i = 0; i < ROW;i++){
             for( int j = 0; j < COL;j++){
                 if (i <= 7 && i <= 7){
@@ -35,27 +36,23 @@ private int[][] makeArray(int arr[][], int ROW, int COL, boolean even){
                  
             }
         }
+       }else{
+           for (int i = 0; i < ROW;i++){
+            for( int j = 0; j < COL;j++){
+                if (i <= 7 && i <= 7){
+                    arr[i][j] = r.nextInt(1);
+                    }
+                
+                 
+            }
+        }
+       }
   return arr;
 }
-public void printArr(){
-    for(int i = 0; i < this.ROW;i++){
-        for( int j = 0; j < this.COL;j++){
-              if(j == 0){
-                    System.out.print("[");
-                }
-                if(j < 8){
-                    System.out.print(this.bitArr[i][j] + ",");
-                }else{
-                    System.out.print(this.bitArr[i][j]);
-                }
-                
-                if( j == 8 ){
-                    System.out.print("]");
-                    System.out.println("");
-                }
-        
-            }
-    }
+public int[][] createArr(){
+
+return makeArray(this.bitArr, this.ROW, this.COL, this.even);
     
 }
+
 }
