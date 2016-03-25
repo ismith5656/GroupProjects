@@ -30,7 +30,7 @@ private int[][] makeArray(int arr[][], int ROW, int COL, boolean even){
         for (int i = 0; i < ROW;i++){
             for( int j = 0; j < COL;j++){
                 if (i <= 7 && i <= 7){
-                    arr[i][j] = r.nextInt(1);
+                    arr[i][j] = r.nextInt(2);
                 }
                 
                  
@@ -40,7 +40,7 @@ private int[][] makeArray(int arr[][], int ROW, int COL, boolean even){
            for (int i = 0; i < ROW;i++){
             for( int j = 0; j < COL;j++){
                 if (i <= 7 && i <= 7){
-                    arr[i][j] = r.nextInt(1);
+                    arr[i][j] = r.nextInt(2);
                     }
                 
                  

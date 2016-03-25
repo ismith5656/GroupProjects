@@ -21,6 +21,10 @@ public class BitErrorArray {
         BitErrorArr arr = new BitErrorArr();
         int[][] Arr = arr.createArr();
         
+        printArr(Arr);
+        
+    }
+    public static void printArr(int Arr[][]){
         System.out.println("  1 2 3 4 5 6 7 8");
         System.out.println(" _________________");
         for (int i = 0; i < 8;i++){
@@ -40,9 +44,7 @@ public class BitErrorArray {
                 }
             }
         }
-        
     }
-    
 
     
 }
