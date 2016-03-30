@@ -29,25 +29,33 @@ private int[][] makeArray(int arr[][], int ROW, int COL, boolean even){
        if(even){
         for (int i = 0; i < ROW;i++){
             for( int j = 0; j < COL;j++){
-                if (i <= 7 && i <= 7){
+                if (i <= 7 && j <= 6){
                     arr[i][j] = r.nextInt(2);
+                }
+                if (i <= 7 && j == 7){
+                    arr[i][j] =1;
                 }
                 
                  
             }
         }
        }else{
-           for (int i = 0; i < ROW;i++){
+         for (int i = 0; i < ROW;i++){
             for( int j = 0; j < COL;j++){
-                if (i <= 7 && i <= 7){
+                if (i <= 7 && j <= 6){
                     arr[i][j] = r.nextInt(2);
-                    }
-                
+                }
+                if (i <= 7 && j == 7){
+                    arr[i][j] =1;
+                } 
                  
             }
         }
        }
   return arr;
+}
+public void check(){
+    int [][] biarr= new int[][];
 }
 public int[][] createArr(){
 
