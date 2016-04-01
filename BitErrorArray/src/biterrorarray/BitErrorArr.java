@@ -54,8 +54,71 @@ private int[][] makeArray(int arr[][], int ROW, int COL, boolean even){
        }
   return arr;
 }
-public void check(){
-    int [][] biarr= new int[][];
+public void check(int arr[][], int ROW, int COL, boolean even){
+    int[][] biarrV = new int[ROW][COL];
+    int[][] biarrH = new int[ROW][COL];
+    for(int i = 0;i < ROW;i++){
+        for(int j = 0;j < COL;j++){
+            if(i <= 0 && j==0){
+                biarrV[i][j] = 1;
+            }else{
+                if(i <= 1 && j==1){
+                biarrV[i][j] = 2;
+                }else{
+                    biarrV[i][j] = biarrV[i-1][j]^2;
+                }
+            }
+            
+            if(i == 0 && j<=0){
+                biarrH[i][j] = 1;
+            }else{
+                if(i == 1 && j<=1){
+                biarrH[i][j] = 2;
+                }else{
+                    biarrH[i][j] = biarrH[i][j-1]^2;
+                }
+            }
+        }
+    }
+    if(even){
+        
+    }else{
+        
+    }
+    for(int i = 0;i < ROW;i++){
+        for(int j = 0;j < COL;j++){
+           if(j == 0){
+                    System.out.print( i +"|");
+                }
+                if(j < 7){
+                    System.out.print(biarrV[i][j] + " ");
+                }else{
+                    System.out.print(biarrV[i][j]);
+                }
+                
+                if( j == 7 ){
+                    System.out.print("");
+                    System.out.println("");
+                }
+        }
+    }
+    for(int i = 0;i < ROW;i++){
+        for(int j = 0;j < COL;j++){
+           if(j == 0){
+                    System.out.print( i +"|");
+                }
+                if(j < 7){
+                    System.out.print(biarrH[i][j] + " ");
+                }else{
+                    System.out.print(biarrH[i][j]);
+                }
+                
+                if( j == 7 ){
+                    System.out.print("");
+                    System.out.println("");
+                }
+        }
+    }
 }
 public int[][] createArr(){
 
