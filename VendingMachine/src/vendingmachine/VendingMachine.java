@@ -7,6 +7,7 @@ package vendingmachine;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -18,7 +19,8 @@ public class VendingMachine {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        List<List<List<Object>>> create = create(3,3,3);
+       
        
     
 }
@@ -41,4 +43,13 @@ public class VendingMachine {
     }
     return list1;
 }
+ public int checkLetter(String input){
+     String exp1 = "[a-cA-C]";
+     String exp2= "[d-zD-Z]";
+     CharSequence inputStr = input;
+     Pattern correctLetter = Pattern.compile(exp1);
+     Pattern incorrectLetter = Pattern.compile(exp2);
+    int test = (int)'b'- 96;
+    return test;
+ }
     }
